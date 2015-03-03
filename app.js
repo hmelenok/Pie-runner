@@ -46,18 +46,18 @@ function restore_listner() {
 
 function init() {
     "use strict";
-    hero1.src = 'hero1.png';
-    hero2.src = 'hero2.png';
-    hero3.src = 'hero3.png';
-    hero4.src = 'hero4.png';
-    hero5.src = 'hero5.png';
-    hero6.src = 'hero6.png';
-    hero7.src = 'hero7.png';
-    hero8.src = 'hero8.png';
-    cloud.src = 'cloud.png';
-    pie.src = 'pie.png';
-    ground.src = 'ground.png';
-    sky.src = 'sky.png';
+    hero1.src = 'images/hero1.png';
+    hero2.src = 'images/hero2.png';
+    hero3.src = 'images/hero3.png';
+    hero4.src = 'images/hero4.png';
+    hero5.src = 'images/hero5.png';
+    hero6.src = 'images/hero6.png';
+    hero7.src = 'images/hero7.png';
+    hero8.src = 'images/hero8.png';
+    cloud.src = 'images/cloud.png';
+    pie.src = 'images/pie.png';
+    ground.src = 'images/ground.png';
+    sky.src = 'images/sky.png';
     hero1.height = 50;
     hero1.width = 35;
 
