@@ -27,9 +27,12 @@ function keys(e) {
 
 
     e = e || event;
-    if (e.type === "keydown") {
+    if (e.type === "keydown" || e.type === "touchstart") {
       //console.log(e);
-        if (e.which === 87 || e.which === 38 || e.which === 32) {
+      if(e.type === "touchstart"){
+        direction = 'up';
+        return "up";
+      }else if (e.which === 87 || e.which === 38 || e.which === 32) {
             direction = 'up';
             return "up";
         }
@@ -38,7 +41,7 @@ function keys(e) {
     }
 }
 window.onkeydown= keys;
-
+window.touchstart= keys;
 
 
 function init() {
