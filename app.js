@@ -23,24 +23,21 @@ var hero_speed = 5;
 
 
 function keys(e) {
-    "use strict";
+    //"use strict";
 
 
     e = e || event;
     if (e.type === "keydown") {
+      //console.log(e);
         if (e.which === 87 || e.which === 38 || e.which === 32) {
+            direction = 'up';
             return "up";
         }
         return "";
 
     }
 }
-function restore_listner() {
-    "use strict";
-    window.addEventListener("keydown", function () {
-        direction = keys();
-    });
-}
+window.onkeydown= keys;
 
 
 
@@ -61,7 +58,7 @@ function init() {
     hero1.height = 50;
     hero1.width = 35;
 
-    restore_listner();
+    // restore_listner();
 }
 var g = 0;
 var m = 0;
@@ -310,4 +307,3 @@ function draw() {
     window.requestAnimationFrame(draw);
 }
 init();
-
