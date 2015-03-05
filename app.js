@@ -17,13 +17,13 @@ var sky = new Image();
 var pie = new Image();
 var cloud = new Image();
 var direction;
-var speed = 5;
-var hero_speed = 5;
+var speed = 2;
+var hero_speed = 3;
 
 
 
 function keys(e) {
-    //"use strict";
+    "use strict";
 
 
     e = e || event;
@@ -58,11 +58,11 @@ function init() {
     hero1.height = 50;
     hero1.width = 35;
 
-    // restore_listner();
+    window.requestAnimationFrame(draw);
 }
 var g = 0;
 var m = 0;
-var hero_frame = 1;
+var hero_frame = 0;
 
 var run_count = 0;
 
@@ -86,20 +86,21 @@ function reset_game() {
     hero_frame = 0;
     screen_points = 0;
     run_count = 0;
-    speed = 5;
-    hero_speed = 5;
+    speed = 2;
+    hero_speed = 3
 }
 
 function heroAnimation() {
     "use strict";
     var hero1X = 25, hero1Y;
     hero1Y = canvas.height - hero1.height - 25;
-    hero_frame = hero_frame + 4;
+    hero_frame = hero_frame + 0.35;
+    //console.log(hero_frame);
     if (hero_frame > (16 * hero_speed)) {
-        hero_frame = 1;
+        hero_frame = 0;
     }
 
-    if (hero_frame >= 1 && hero_frame < (2 * hero_speed)) {
+    if (hero_frame >= 0 && hero_frame < (2 * hero_speed)) {
         ctx.drawImage(hero1, hero1X, hero1Y);
         ctx.restore();
     } else if (hero_frame >= (2 * hero_speed) && hero_frame < (4 * hero_speed)) {
@@ -132,19 +133,19 @@ function hero_actions(ctx) {
     "use strict";
     var hero1X = 25, hero1Y;
     hero1Y = canvas.height - hero1.height - 25;
-    hero_frame = hero_frame + 4;
+    //hero_frame = hero_frame + 4;
     //jump
     if (direction === 'up') {
         ctx.save();
-        if (g >= 0 && g <= 12 && m === 0) {
+        if (g >= 0 && g <= 20 && m === 0) {
             g++;
             ctx.translate(0, -g * hero_speed);
             ctx.drawImage(hero1, hero1X, hero1Y);
             ctx.restore();
-            if (g >= 12) {
+            if (g >= 20) {
                 m = 1;
             }
-        } else if (m === 1 && g <= 12 && g > 0) {
+        } else if (m === 1 && g <= 20 && g > 0) {
             g--;
             ctx.translate(0, -g * hero_speed);
             ctx.drawImage(hero1, hero1X, hero1Y);
